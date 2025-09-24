@@ -1,0 +1,14 @@
+[Unit]
+Description=Tor Proxy Service
+After=network.target tor.service
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/Tor-Proxy
+Environment="APP_ENV=production"
+ExecStart=/usr/local/bin/waitress-serve --host=127.0.0.1 --port=5000 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
