@@ -6,6 +6,7 @@ deactivate
 # Install package
 pip install flask
 pip install pysocks
+pip install waitress
 
 # Create requirements file
 pip freeze > requirements.txt
